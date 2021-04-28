@@ -19,6 +19,11 @@ if (Get-Module -name PSReadline) {
     Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
     Set-PSReadlineOption -EditMode Windows
 }
+try{
+Import-Module PoshColor
+}catch{
+Install-Module PoshColor
+}
 
 #Aliases
 Set-Alias -Name npp -Value notepad++.exe
